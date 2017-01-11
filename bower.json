@@ -1,0 +1,21 @@
+{
+  "name": "tutmee",
+  "description": "testing layout for webstudio Tutmee Taganrog",
+  "main": "index.js",
+  "authors": [
+    "Denis Kamensky"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "normalize-css": "normalize.css#^5.0.0"
+  }
+}
