@@ -12,7 +12,7 @@ var gulp = require('gulp'),
 gulp.task('tinypng', function () {
     gulp.src('no-comp/*.*')
         .pipe(tinypng('LOS6_ciVHxNcie7NPlwd-xl_vm067sfm'))
-        .pipe(gulp.dest('app/images/'));
+        .pipe(gulp.dest('app/img/'));
 });
 gulp.task('clean', function () {
     return gulp.src('no-comp/*', {read: false})

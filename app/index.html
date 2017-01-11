@@ -10,20 +10,34 @@
 	 <!--[if lt IE 9]>
  	 <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
   	<![endif]-->
+  	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic-ext" rel="stylesheet">
   	<link rel="stylesheet" href="libs/normalize-css/normalize.css">
   	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
   	<link rel="stylesheet" href='css/main.css'>
-  	<link rel="stylesheet" href="media.sass">
+  	<link rel="stylesheet" href="css/media.css">
   	<script src="libs/modernizr.min.js"></script>
 </head>
 <body>
-	<div class="row">
-		<div class="container">
-			<div class="col-md-12">
-				<h1>hello</h1>
+	<header>
+		<div class="top_navigation container">
+			<div class="row">
+				<div class="menu_with_login col-md-6 col-md-push-3 ">
+					<nav id="main_menu">
+						<ul>
+							<li class='active'><a href="#">О проекте</a></li>
+							<li><a href="#">Условия</a></li>
+							<li><a href="#">Партнерам</a></li>
+							<li><a href="#">Помощь</a></li>
+							<li><a href="#">Контакты</a></li>
+						</ul>
+					</nav>
+				</div>
+				<a href="/" class="logo col-md-2 col-md-pull-6">
+					<img src="img/logo.png" alt="Loftmark">
+				</a>
 			</div>
 		</div>
-	</div>
+	</header>
 	<script src='libs/jquery/dist/jquery.min.js'></script>
 	<script src='main.js'></script>
 </body>

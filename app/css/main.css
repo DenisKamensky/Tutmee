@@ -1,0 +1,39 @@
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+  font-size: 16px; }
+  html body .top_navigation {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    html body .top_navigation .logo {
+      display: inline-block; }
+      html body .top_navigation .logo img {
+        max-width: 100%; }
+    html body .top_navigation #main_menu {
+      height: 60px;
+      line-height: 65px; }
+      html body .top_navigation #main_menu ul {
+        padding: 0 0 0 31px;
+        margin: 0;
+        list-style: none;
+        line-height: normal;
+        display: inline-block;
+        width: 100%; }
+        html body .top_navigation #main_menu ul li {
+          padding: 5px 8px;
+          display: inline-block;
+          -webkit-transition: all .5s;
+          transition: all .5s; }
+          html body .top_navigation #main_menu ul li:hover, html body .top_navigation #main_menu ul li.active {
+            background-color: #33a296; }
+            html body .top_navigation #main_menu ul li:hover a, html body .top_navigation #main_menu ul li.active a {
+              color: #fff; }
+          html body .top_navigation #main_menu ul li:not(:first-of-type) {
+            margin-left: 11px; }
+          html body .top_navigation #main_menu ul li a {
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            color: #101219;
+            text-decoration: none; }
