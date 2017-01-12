@@ -1,41 +1,78 @@
 $menu_text: #33a296
 $menu_black: #101219
-html 
-	overflow-x: hidden
+$sprite: url('/img/sprite.png')
+body 
 	max-width: 100%
+	overflow-x: hidden
+.header
+	padding: 10px 0
+	position: fixed
+	top: 0
+	z-index: 100
+	width: 100%
+.menu-trigger
+	display: none
+	font-size: 30px
+	position: relative
+	&__icon
+		line-height: 46px
+.logo
+	&__img
+		max-width: 100%
+.link
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500
 	font-size: 16px
-	body 
-		.top_navigation
-			padding-top: 10px
-			padding-bottom: 10px
-			.logo
-				display: inline-block
-				img 
-					max-width: 100%
-			#main_menu
-				height: 60px
-				line-height: 65px
-				ul
-					padding: 0 0 0 31px
-					margin: 0
-					list-style: none
-					line-height: normal
-					display: inline-block
-					width: 100%
-					li
-						padding: 5px 8px
-						display: inline-block
-						transition: all .5s
-						&:hover, &.active
-							background-color: $menu_text
-							a 
-								color: #fff
-						&:not(:first-of-type)
-							margin-left: 11px
-						a 
-							font-size: 1rem
-							font-family: 'Roboto', sans-serif
-							font-weight: 500
-							letter-spacing: 0.1em
-							color: $menu_black
-							text-decoration: none
+	transition: all .3s
+	color: $menu_black
+	&:hover
+		text-decoration: none
+
+.menu
+	width: 100%
+	height: 56px
+	line-height: 56px
+	&__list
+		list-style: none
+		padding: 0
+		margin: 0
+		display: inline-block
+		line-height: 1
+		text-align: center
+		width: 100%
+	&__item
+		display: inline-block
+		margin-right: 10px
+		&:not(:last-of-type)
+			margin-right: 0
+	&__link
+		display: inline-block
+		padding: 5px 10px
+		letter-spacing: .1em
+		&_curent, &:hover
+			background-color: $menu_text
+			color: #fff
+.access
+	height: 56px
+	line-height: 61px
+	&__login, &__register
+		font-size: 14px
+		display: inline-block
+		padding: 0 15px
+		&:hover
+			color: $menu_text
+	&__login
+		&::before
+			content: ''
+			display: inline-block
+			margin-right: 15px
+			background-image: $sprite
+			background-repeat: no-repeat
+			background-position: 0% 0px
+			width: 43px
+			height: 17px
+			position: relative
+			top: 2px
+		&:hover::before
+			background-position: -43px 0
+		

@@ -18,26 +18,56 @@
   	<script src="libs/modernizr.min.js"></script>
 </head>
 <body>
-	<header>
-		<div class="top_navigation container">
+	<header class="header">
+		<div class="container">
 			<div class="row">
-				<div class="menu_with_login col-md-6 col-md-push-3 ">
-					<nav id="main_menu">
-						<ul>
-							<li class='active'><a href="#">О проекте</a></li>
-							<li><a href="#">Условия</a></li>
-							<li><a href="#">Партнерам</a></li>
-							<li><a href="#">Помощь</a></li>
-							<li><a href="#">Контакты</a></li>
-						</ul>
-					</nav>
+				<div class="col-md-10  col-sm-2 col-md-push-2">
+					<div class="row">
+						<div class="menu-trigger">
+							<span class="glyphicon glyphicon-menu-hamburger menu-trigger__icon" aria-hidden="true"></span>
+						</div>
+						<div class="navigation-container">
+							<div class="col-md-9">
+								<nav class='menu header-menu'>
+									<ul class="menu__list">
+										<li class="menu__item header-menu__item">
+											<a href="#" class="menu__link link menu__link_curent">О проекте</a>
+										</li>
+										<li class="menu__item header-menu__item">
+											<a href="#" class="menu__link link">Условия</a>
+										</li>
+										<li class="menu__item header-menu__item">
+											<a href="#" class="menu__link link">Партнерам</a>
+										</li>
+										<li class="menu__item header-menu__item">
+											<a href="#" class="menu__link link">Помощь</a>
+										</li>
+										<li class="menu__item header-menu__item">
+											<a href="#" class="menu__link link">Контакты</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
+							<div class="col-md-3">
+								<div class="access">
+									<a href='#' class="access__login link">Вход</a>
+									<a href='#' class="access__register link">Регистрация</a>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-				<a href="/" class="logo col-md-2 col-md-pull-6">
-					<img src="img/logo.png" alt="Loftmark">
-				</a>
+				<div class="col-md-2 col-sm-3 col-md-pull-10">
+					<div class="logo">
+						<a href="/" class="logo__link"><img src="img/logo.png" alt="Loftmark" class='logo__img'></a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</header>
+	<div class="top-block"></div>
+	<div class="content"></div>
+	<footer class="footer"></footer>
 	<script src='libs/jquery/dist/jquery.min.js'></script>
 	<script src='main.js'></script>
 </body>
