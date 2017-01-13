@@ -9,13 +9,6 @@ body {
   z-index: 100;
   width: 100%; }
 
-.menu-trigger {
-  display: none;
-  font-size: 30px;
-  position: relative; }
-  .menu-trigger__icon {
-    line-height: 46px; }
-
 .logo__img {
   max-width: 100%; }
 
@@ -50,7 +43,7 @@ body {
     display: inline-block;
     padding: 5px 10px;
     letter-spacing: .1em; }
-    .menu__link_curent, .menu__link:hover {
+    .menu__link_current, .menu__link:hover {
       background-color: #33a296;
       color: #fff; }
 
@@ -58,9 +51,10 @@ body {
   height: 56px;
   line-height: 61px; }
   .access__login, .access__register {
-    font-size: 14px;
     display: inline-block;
     padding: 0 15px; }
+    .access__login_font-s, .access__register_font-s {
+      font-size: 14px; }
     .access__login:hover, .access__register:hover {
       color: #33a296; }
   .access__login::before {
@@ -76,3 +70,10 @@ body {
     top: 2px; }
   .access__login:hover::before {
     background-position: -43px 0; }
+
+.menu-trigger {
+  display: none;
+  font-size: 30px;
+  position: relative; }
+  .menu-trigger.__icon {
+    line-height: 46px; }

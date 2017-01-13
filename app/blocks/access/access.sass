@@ -1,0 +1,26 @@
+@import '../variables.sass'
+.access
+	height: 56px
+	line-height: 61px
+	&__login, &__register
+		display: inline-block
+		padding: 0 15px
+		&_font-s
+			font-size: 14px
+		&:hover
+			color: $menu_text
+	&__login
+		&::before
+			content: ''
+			display: inline-block
+			margin-right: 15px
+			background-image: $sprite
+			background-repeat: no-repeat
+			background-position: 0% 0px
+			width: 43px
+			height: 17px
+			position: relative
+			top: 2px
+		&:hover::before
+			background-position: -43px 0
+		
