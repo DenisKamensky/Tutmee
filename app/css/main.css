@@ -67,7 +67,7 @@ body {
     content: '';
     display: inline-block;
     margin-right: 15px;
-    background-image: url("/img/sprite.png");
+    background-image: url("../img/sprite.png");
     background-repeat: no-repeat;
     background-position: 0% 0px;
     width: 43px;
