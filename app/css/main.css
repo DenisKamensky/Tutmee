@@ -8,7 +8,8 @@ body {
   position: fixed;
   top: 0;
   z-index: 100;
-  width: 100%; }
+  width: 100%;
+  background-color: #FFF; }
 
 .menu-trigger {
   display: none;
@@ -86,10 +87,22 @@ body {
   background-repeat: no-repeat;
   background-position: 93% bottom;
   background-size: contain; }
+  .top-block .container {
+    position: relative; }
+  .top-block_no-bg {
+    background-image: none; }
 
 .banner {
   padding-right: 109px;
-  margin-top: 16vh; }
+  margin-top: 16vh;
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: all 1s;
+  transition: all 1s; }
+  .banner_disabled {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg); }
   .banner__date {
     background-image: url("../img/sprite.png");
     background-repeat: no-repeat;
@@ -126,7 +139,21 @@ body {
     position: absolute;
     top: 55px;
     left: 14px;
-    z-index: 0; }
+    z-index: 0;
+    -webkit-transform-origin: top center;
+    -ms-transform-origin: top center;
+    transform-origin: top center;
+    -webkit-transform: rotate(125deg);
+    -ms-transform: rotate(125deg);
+    transform: rotate(125deg);
+    opacity: 0;
+    -webkit-transition: all 1s;
+    transition: all 1s; }
+    .banner__arrows_visible {
+      opacity: 1;
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg); }
   .banner__play {
     background-image: url("../img/sprite.png");
     background-repeat: no-repeat;
@@ -137,7 +164,12 @@ body {
     position: absolute;
     right: 6px;
     top: 25px;
-    cursor: pointer; }
+    cursor: pointer;
+    opacity: 0;
+    -webkit-transition: all 1s .5s;
+    transition: all 1s .5s; }
+    .banner__play_visible {
+      opacity: 1; }
 
 .headline {
   color: #fff;
@@ -155,3 +187,48 @@ body {
     font-weight: 500;
     font-size: 20px;
     letter-spacing: .46em; }
+
+.video:not(html) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  visibility: hidden;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  z-index: -1;
+  opacity: 0; }
+
+.video_enabled:not(html) {
+  z-index: 1;
+  opacity: 1;
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  visibility: visible; }
+
+.video__player {
+  position: absolute;
+  padding: 26px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 70%;
+  margin: auto;
+  display: block; }
+  .video__player iframe {
+    width: 100%; }
+
+.video__close {
+  color: #fff;
+  font-size: 30px;
+  position: absolute;
+  top: -5px;
+  cursor: pointer;
+  right: 0; }
+  .video__close:hover {
+    text-shadow: 0px 0px 2px black; }

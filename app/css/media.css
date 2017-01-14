@@ -82,3 +82,7 @@
       text-align: right; }
     .access__register {
       width: 49%; } }
+
+@media only screen and (max-width: 774px) {
+  .access_tablet-right {
+    display: none; } }

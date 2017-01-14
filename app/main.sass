@@ -12,6 +12,7 @@ body
 	top: 0
 	z-index: 100
 	width: 100%
+	background-color: #FFF
 .menu-trigger
 	display: none
 	font-size: 30px
@@ -85,9 +86,18 @@ body
 	background-repeat: no-repeat
 	background-position: 93% bottom
 	background-size: contain
+	.container
+		position: relative
+	&_no-bg
+		background-image: none
 .banner
 	padding-right: 109px
 	margin-top: 16vh
+	position: relative
+	backface-visibility: hidden
+	transition: all 1s
+	&_disabled
+		transform: rotateY(180deg);
 	&__date
 		background-image: $sprite
 		background-repeat: no-repeat
@@ -125,6 +135,13 @@ body
 		top: 55px
 		left: 14px
 		z-index: 0
+		transform-origin: top center
+		transform: rotate(125deg)
+		opacity: 0
+		transition: all 1s
+		&_visible
+			opacity: 1
+			transform: rotate(0deg)
 	&__play
 		background-image: $sprite
 		background-repeat: no-repeat
@@ -136,7 +153,10 @@ body
 		right: 6px
 		top: 25px
 		cursor: pointer
-
+		opacity: 0
+		transition: all 1s .5s
+		&_visible
+			opacity: 1
 .headline
 	color: #fff
 	text-align: center
@@ -153,3 +173,41 @@ body
 		font-weight: 500
 		font-size: 20px
 		letter-spacing: .46em
+.video
+	&:not(html)
+		position: absolute
+		top: 0
+		bottom: 0
+		width: 100%
+		backface-visibility: hidden
+		transform: rotateY(180deg)
+		visibility: hidden
+		transition: all 1s 
+		z-index: -1
+		opacity: 0
+	&_enabled:not(html)
+		z-index: 1
+		opacity: 1
+		transform: rotateY(0deg)
+		visibility: visible
+	&__player
+		position: absolute
+		padding: 26px
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		width: 70%
+		margin: auto
+		display: block
+		iframe
+			width: 100%
+	&__close
+		color: #fff 
+		font-size: 30px
+		position: absolute
+		top: -5px
+		cursor: pointer
+		right: 0
+		&:hover
+			text-shadow: 0px 0px 2px black
