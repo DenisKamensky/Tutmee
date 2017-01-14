@@ -1,6 +1,7 @@
 body {
   max-width: 100%;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  padding-top: 76px; }
 
 .header {
   padding: 10px 0;
@@ -78,3 +79,79 @@ body {
     background-position: -43px 0; }
   .access_tablet-right {
     text-align: right; }
+
+.top-block {
+  background-color: #62b29d;
+  background-image: url("../img/banner-bg.png");
+  background-repeat: no-repeat;
+  background-position: 93% bottom;
+  background-size: contain; }
+
+.banner {
+  padding-right: 109px;
+  margin-top: 16vh; }
+  .banner__date {
+    background-image: url("../img/sprite.png");
+    background-repeat: no-repeat;
+    background-position: -5px -22px;
+    display: block;
+    width: 221px;
+    height: 53px;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    letter-spacing: .1em;
+    padding-top: 3px; }
+  .banner__action-text {
+    font-family: 'OpenGost Type A TT', serif;
+    text-transform: uppercase;
+    font-size: 36px;
+    position: relative;
+    z-index: 1;
+    letter-spacing: .16em; }
+  .banner__toggle-video {
+    position: relative;
+    height: 175px;
+    width: 270px;
+    margin: 40px auto 145px; }
+  .banner__arrows {
+    background-image: url("../img/sprite.png");
+    background-repeat: no-repeat;
+    background-position: 0 -62px;
+    background-size: 104%;
+    width: 178px;
+    height: 115px;
+    position: absolute;
+    top: 55px;
+    left: 14px;
+    z-index: 0; }
+  .banner__play {
+    background-image: url("../img/sprite.png");
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 88px;
+    background-size: 183%;
+    background-position: 0px -183px;
+    position: absolute;
+    right: 6px;
+    top: 25px;
+    cursor: pointer; }
+
+.headline {
+  color: #fff;
+  text-align: center; }
+  .headline__header {
+    letter-spacing: .16em;
+    font-size: 81px;
+    font-family: 'OpenGost Type A TT', serif;
+    text-transform: uppercase;
+    line-height: 0.8; }
+  .headline__bigest-word {
+    font-size: 131px; }
+  .headline__text {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: .46em; }
