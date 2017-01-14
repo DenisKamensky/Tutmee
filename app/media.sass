@@ -32,12 +32,10 @@
 		.col-md-3
 			padding-left: 0
 @media only screen and(max-width: 991px)
-	.navigation-container
-		.col-md-3
-			display: none
-@media only screen and(max-width: 991px)
 	.menu-trigger
 		display: block
+		padding: 0 15px
+// splited on bem
 @media only screen and(max-width: 991px)
 	.navigation-container
 		display: none
@@ -45,15 +43,35 @@
 			display: block
 			position: fixed
 			top: 70px
-			height: 100vh
+			height: calc(100vh - 70px)
 			left: 0
 			width: 100vw
 			padding-top: 13%
 			background-color: #5eaf9b
 		.col-md-9
 			width: 100%
+			padding: 0
 @media only screen and(max-width: 991px)
 	.header-menu
 		&__item
 			display: block
 			text-align: center
+@media only screen and(max-width: 770px)
+	.logo
+		text-align: right
+@media only screen and(max-width: 770px)
+	.navigation-container 
+		.col-md-3
+			width: 100%
+			padding: 0
+			position: absolute
+			bottom: 0
+			left: 0
+@media only screen and(max-width: 770px)
+	.access
+		background-color: #FFF
+		&__login
+			width: 49.8%
+			text-align: right
+		&__register
+			width: 49%

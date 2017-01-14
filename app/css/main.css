@@ -76,3 +76,5 @@ body {
     top: 2px; }
   .access__login:hover::before {
     background-position: -43px 0; }
+  .access_tablet-right {
+    text-align: right; }
