@@ -86,3 +86,94 @@
 @media only screen and (max-width: 774px) {
   .access_tablet-right {
     display: none; } }
+
+@media only screen and (max-width: 1450px) {
+  .banner {
+    margin-top: 6vh; }
+    .banner__toggle-video {
+      margin-bottom: 40px; } }
+
+@media only screen and (max-width: 1350px) {
+  .top-block {
+    background-position: 110% bottom; } }
+
+@media only screen and (max-width: 1350px) {
+  .banner {
+    padding-right: 0; } }
+
+@media only screen and (max-width: 1280px) {
+  .top-block .col-md-7 {
+    width: 100%; } }
+
+@media only screen and (max-width: 1280px) {
+  .banner__toggle-video {
+    margin: 15px auto 145px 0; }
+  .banner__date {
+    margin-left: 1vw;
+    margin-top: 15px; } }
+
+@media only screen and (max-width: 1280px) {
+  .top-block {
+    background-size: 560px; } }
+
+@media only screen and (max-width: 800px) {
+  .banner__date {
+    margin: auto; }
+  .banner__arrows {
+    display: none; }
+  .banner__toggle-video {
+    margin-top: 100px;
+    margin-bottom: 110px; }
+  .banner__play {
+    right: initial;
+    left: 0;
+    top: -90px; } }
+
+@media only screen and (max-width: 800px) {
+  .top-block {
+    background-position: 150% bottom; } }
+
+@media only screen and (max-width: 700px) {
+  .top-block {
+    background-position: 40vw bottom; } }
+
+@media only screen and (max-width: 450px) {
+  .top-block {
+    background-position: 30vw bottom; } }
+
+@media only screen and (max-width: 700px) {
+  .banner {
+    margin-top: 2vh; } }
+
+@media only screen and (max-width: 700px) {
+  .headline__text {
+    letter-spacing: normal; }
+  .headline__header {
+    letter-spacing: 0.05em; }
+  .headline__bigest-word {
+    letter-spacing: 0.16em; } }
+
+@media only screen and (max-width: 560px) {
+  .headline__header {
+    font-size: 40px; }
+  .headline__bigest-word {
+    font-size: 91px; }
+  .headline__text {
+    font-size: 18px; } }
+
+@media only screen and (max-width: 560px) {
+  .video__player {
+    width: 95%; } }
+
+@media only screen and (max-width: 400px) {
+  .top-block {
+    background-size: 400px;
+    background-position: 36vw bottom; } }
+
+@media only screen and (max-width: 400px) {
+  .banner__toggle-video {
+    height: 70px; } }
+
+@media only screen and (max-width: 340px) {
+  .access__login {
+    width: 49%; } }
