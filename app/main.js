@@ -58,6 +58,35 @@
 	 		$('.news-block__container').slideToggle();
 	 	});
 	 	/*toogle news block end */
+	 	
+	 	/*submit footer form */
+	 	$('.form-block form').submit(function(e){
+	 		var userName = $(this).find('.form-block__name input').val();
+	 		var tel = $(this).find('.form-block__tel input').val();
+	 		var name_pattern = /[a-яА-Я]\s*[a-яА-Я]/i;
+	 		var telPattern = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+	 		var nameResult = name_pattern.test(userName);
+	 		var telResult = telPattern.test(tel)
+	 		if(!nameResult){
+	 			e.preventDefault();
+	 			alert('ошибка')
+	 		}else if(!telResult){
+	 			e.preventDefault();
+	 			alert('ошибка')
+	 		}else{
+	 			e.preventDefault()
+	 			$.ajax({
+					type: "POST",
+					url: "mail.php",
+					data: $(this).serialize()
+				}).done(function() {
+					$(this).find("input").val("");
+					alert("Спасибо за заявку! Скоро мы с вами свяжемся.");
+					$("#form").trigger("reset");
+				});
+	 		}
+	 	});
+	 	/*submit footer form  end*/
 	});
 	 $(window).resize(function(){
 	 	videoPlayerHeight();

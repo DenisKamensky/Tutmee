@@ -132,13 +132,12 @@ body {
   .banner__arrows {
     background-image: url("../img/sprite.png");
     background-repeat: no-repeat;
-    background-position: 0 -62px;
-    background-size: 104%;
-    width: 178px;
-    height: 115px;
+    background-position: 0 -98px;
+    width: 245px;
+    height: 167px;
     position: absolute;
     top: 55px;
-    left: 14px;
+    left: -39px;
     z-index: 0;
     -webkit-transform-origin: top center;
     -ms-transform-origin: top center;
@@ -157,12 +156,11 @@ body {
   .banner__play {
     background-image: url("../img/sprite.png");
     background-repeat: no-repeat;
-    width: 100px;
-    height: 88px;
-    background-size: 183%;
-    background-position: 0px -183px;
+    width: 131px;
+    height: 123px;
+    background-position: -6px -265px;
     position: absolute;
-    right: 6px;
+    right: -24px;
     top: 25px;
     cursor: pointer;
     opacity: 0;
@@ -310,7 +308,95 @@ body {
 .form-block {
   background-color: #6b5a8d;
   color: #fff;
-  padding-top: 100px; }
+  padding-top: 100px;
+  padding-bottom: 40px; }
+  .form-block__name, .form-block__tel {
+    width: 362px;
+    display: inline-block;
+    background-image: url("../img/sprite.png");
+    background-position: -10px -385px;
+    background-repeat: no-repeat;
+    padding-bottom: 20px; }
+    .form-block__name input, .form-block__tel input {
+      outline: none;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      letter-spacing: .1em; }
+      .form-block__name input::-webkit-input-placeholder, .form-block__name input::-moz-placeholder, .form-block__name input:-moz-placeholder, .form-block__name input:-ms-input-placeholder, .form-block__tel input::-webkit-input-placeholder, .form-block__tel input::-moz-placeholder, .form-block__tel input:-moz-placeholder, .form-block__tel input:-ms-input-placeholder {
+        opacity: 1; }
+  .form-block__name {
+    margin-right: 10%; }
+  .form-block__messege {
+    position: relative;
+    margin-bottom: 65px; }
+    .form-block__messege textarea {
+      display: block;
+      width: 100%;
+      margin: auto;
+      margin-top: 40px;
+      outline: none;
+      resize: none;
+      text-align: center;
+      overflow-y: auto;
+      background-color: transparent;
+      border: none;
+      font-size: 16px;
+      border-bottom: 4px solid #fff; }
+    .form-block__messege::after, .form-block__messege::before {
+      content: '';
+      display: block;
+      height: 10px;
+      width: 10px;
+      background-color: #FFF;
+      border-radius: 50%;
+      bottom: -3px;
+      left: -1px;
+      position: absolute; }
+    .form-block__messege::before {
+      left: initial;
+      right: -1px; }
+  .form-block__submit {
+    display: block;
+    width: 305px;
+    height: 95px;
+    margin: auto;
+    outline: none;
+    background-image: url("../img/sprite.png");
+    background-position: -7px -490px;
+    background-color: transparent;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 50px; }
+    .form-block__submit span {
+      -webkit-transition: all .5s;
+      transition: all .5s; }
+    .form-block__submit:hover span {
+      -webkit-transform: translateX(-20px);
+      -ms-transform: translateX(-20px);
+      transform: translateX(-20px); }
+  .form-block__contact-tel {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 24px;
+    letter-spacing: 0.1em; }
+    .form-block__contact-tel:hover {
+      color: #fff; }
+  .form-block__service {
+    color: #fff;
+    text-decoration: underline; }
+    .form-block__service:hover {
+      color: #fff;
+      text-decoration: underline; }
+
+.form {
+  text-align: center; }
 
 .title {
   text-align: center; }
@@ -322,7 +408,8 @@ body {
     letter-spacing: 0.16em;
     margin-bottom: 15px; }
   .title__text {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Helvetica', sans-serif;
     font-size: 25px;
     font-weight: 300;
-    letter-spacing: 0.1em; }
+    letter-spacing: 0.1em;
+    margin-bottom: 60px; }

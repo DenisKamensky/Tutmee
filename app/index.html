@@ -170,11 +170,27 @@
 		<div class="form-block">
 			<div class="container">
 				<div class="col-md-8 col-md-push-2">
-					<form action="#" class='form'>
+					<form class='form'>
 						<div class="form__title title">
 							<h2 class='title__heading'>У вас остались вопросы?</h2>
 							<p class='title__text'>мы ответим Вам в самое ближайшее время</p>
 						</div>
+						<div class="form-block__name">
+								<input type="text" maxlength='25' name='name' placeholder='Введите ваше имя'>
+
+							</div>
+							<div class="form-block__tel">
+								<input type="text" maxlength='15' name='phone' placeholder='Введите ваш телефон'>
+							</div>
+							<div class="form-block__messege">
+								<textarea placeholder='Ваш вопрос/пожелание?' name='text'></textarea>
+							</div>
+							<button type="submit" class="form-block__submit">
+								<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> отправить
+								</button>
+							<a href="tel:00000" class="link form-block__contact-tel">+7-000-000-00-00</a>
+							<br>
+							<a href="#" class="link form-block__service">служба поддержки</a>
 					</form>
 				</div>
 			</div>
