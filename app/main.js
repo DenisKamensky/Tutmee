@@ -87,6 +87,18 @@
 	 		}
 	 	});
 	 	/*submit footer form  end*/
+
+	 	/*modify header*/
+	 	$(window).scroll(function(){
+	 		var pagePosition = $('.header').next().offset().top;
+	 		var headerPosition = $('.header').offset().top;
+	 		if(headerPosition>pagePosition){
+	 			$('.header').addClass('header_scrolled');
+	 		}else{
+	 			$('.header').removeClass('header_scrolled');
+	 		};
+	 	});
+	 	/*modify header end*/
 	});
 	 $(window).resize(function(){
 	 	videoPlayerHeight();
