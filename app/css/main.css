@@ -29,6 +29,7 @@ body {
   font-weight: 500;
   font-size: 16px;
   -webkit-transition: all .3s;
+  -o-transition: all .3s;
   transition: all .3s;
   color: #101219; }
   .link:hover {
@@ -67,11 +68,13 @@ body {
       right: 0;
       bottom: 0;
       margin: auto;
+      -webkit-border-radius: 50%;
       border-radius: 50%;
       width: 5px;
       z-index: -1;
       background-color: transparent;
       -webkit-transition: all .5s;
+      -o-transition: all .5s;
       transition: all .5s;
       opacity: 0; }
     .menu__link_curent, .menu__link:hover {
@@ -82,6 +85,7 @@ body {
         width: 100%;
         opacity: 1;
         height: 26px;
+        -webkit-border-radius: 0;
         border-radius: 0; }
 
 .access {
@@ -127,6 +131,7 @@ body {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transition: all 1s;
+  -o-transition: all 1s;
   transition: all 1s; }
   .banner_disabled {
     -webkit-transform: rotateY(180deg);
@@ -169,17 +174,21 @@ body {
     z-index: 0;
     -webkit-transform-origin: top center;
     -ms-transform-origin: top center;
+    -o-transform-origin: top center;
     transform-origin: top center;
     -webkit-transform: rotate(125deg);
     -ms-transform: rotate(125deg);
+    -o-transform: rotate(125deg);
     transform: rotate(125deg);
     opacity: 0;
     -webkit-transition: all 1s;
+    -o-transition: all 1s;
     transition: all 1s; }
     .banner__arrows_visible {
       opacity: 1;
       -webkit-transform: rotate(0deg);
       -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
       transform: rotate(0deg); }
   .banner__play {
     background-image: url("../img/sprite.png");
@@ -193,6 +202,7 @@ body {
     cursor: pointer;
     opacity: 0;
     -webkit-transition: all 1s .5s;
+    -o-transition: all 1s .5s;
     transition: all 1s .5s; }
     .banner__play_visible {
       opacity: 1; }
@@ -225,6 +235,7 @@ body {
   transform: rotateY(180deg);
   visibility: hidden;
   -webkit-transition: all 1s;
+  -o-transition: all 1s;
   transition: all 1s;
   z-index: -1;
   opacity: 0; }
@@ -315,10 +326,12 @@ body {
     position: absolute; }
     .news__button span {
       -webkit-transition: all .5s;
+      -o-transition: all .5s;
       transition: all .5s; }
     .news__button_opened span {
       -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
       transform: rotate(180deg); }
 
 .news-name {
@@ -381,6 +394,7 @@ body {
       height: 10px;
       width: 10px;
       background-color: #FFF;
+      -webkit-border-radius: 50%;
       border-radius: 50%;
       bottom: -3px;
       left: -1px;
@@ -404,10 +418,12 @@ body {
     margin-bottom: 50px; }
     .form-block__submit span {
       -webkit-transition: all .5s;
+      -o-transition: all .5s;
       transition: all .5s; }
     .form-block__submit:hover span {
       -webkit-transform: translateX(-20px);
       -ms-transform: translateX(-20px);
+      -o-transform: translateX(-20px);
       transform: translateX(-20px); }
   .form-block__contact-tel {
     color: #fff;
@@ -481,6 +497,8 @@ body {
       display: inline-block;
       position: absolute;
       top: 0px;
+      bottom: 0;
+      margin: auto;
       line-height: 1; }
 
 .web-studio {
@@ -498,3 +516,112 @@ body {
   .web-studio__img {
     display: inline-block;
     vertical-align: top; }
+
+.apartments {
+  background-color: #ed8d54;
+  background-image: -webkit-radial-gradient(ellipse farthest-corner at center top, #f3ac4a 0%, #ed8d54 100%);
+  background-image: -o-radial-gradient(ellipse farthest-corner at center top, #f3ac4a 0%, #ed8d54 100%);
+  background-image: radial-gradient(ellipse farthest-corner at center top, #f3ac4a 0%, #ed8d54 100%); }
+  .apartments__header {
+    text-align: center;
+    color: #fff;
+    font-family: 'OpenGost Type A TT', serif;
+    font-size: 60px;
+    letter-spacing: 0.16em;
+    margin-top: 100px;
+    margin-bottom: 20px; }
+  .apartments__s-header {
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Helvetica', sans-serif;
+    letter-spacing: 0.1em;
+    color: #2f232c;
+    line-height: 1;
+    margin-bottom: 50px; }
+
+.carousel-item__text {
+  color: #fff;
+  font-family: 'OpenGost Type A TT', serif;
+  text-transform: uppercase;
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  line-height: 1.25em;
+  text-align: center; }
+
+.carousel-item__img {
+  display: block;
+  margin: auto; }
+
+.owl-buttons {
+  position: relative; }
+  .owl-buttons div {
+    position: absolute;
+    top: -135px;
+    margin: auto;
+    height: 85px; }
+    .owl-buttons div.owl-next {
+      right: 0; }
+  .owl-buttons span {
+    font-size: 72px; }
+    .owl-buttons span:hover {
+      color: #fff; }
+
+.guest-block__header {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'OpenGost Type A TT', serif;
+  letter-spacing: 0.16em;
+  font-size: 55px;
+  margin-top: 85px;
+  margin-bottom: 40px; }
+
+.guest-block__slogan {
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  line-height: 1.875em;
+  max-width: 590px;
+  margin: auto;
+  margin-bottom: 70px; }
+
+.guest-block .slider {
+  max-width: 87%;
+  margin: auto; }
+  .guest-block .slider .slider-container {
+    clear: both;
+    position: relative; }
+  .guest-block .slider__slide {
+    display: inline-block;
+    position: relative;
+    left: 0; }
+    .guest-block .slider__slide:first-of-type {
+      margin-left: -20%; }
+    .guest-block .slider__slide:not(:first-of-type) {
+      margin-left: -4px; }
+    .guest-block .slider__slide a {
+      display: inline-block;
+      position: absolute;
+      z-index: 2;
+      width: 185px;
+      color: #fff;
+      background-color: #33a296;
+      text-align: center;
+      padding: 10px 0;
+      outline: 2px solid #fff;
+      text-transform: uppercase;
+      bottom: 5%;
+      right: 13%;
+      font-size: 20px;
+      letter-spacing: 0.16em;
+      text-decoration: none;
+      visibility: hidden;
+      opacity: 0;
+      -webkit-transition: all .3s;
+      -o-transition: all .3s;
+      transition: all .3s; }
+    .guest-block .slider__slide.active a {
+      visibility: visible;
+      opacity: 1; }
+    .guest-block .slider__slide img {
+      max-width: 100%; }

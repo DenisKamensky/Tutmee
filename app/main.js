@@ -10,6 +10,18 @@
 	 		});
 	 	}
 	 };
+	 /*create a slider with correct sizes*/
+	 var sliderSizes = function(){
+	 	if($('.slider').length){
+	 		var commonWidth = 0;
+	 		$('.slider__slide').each(function(){
+	 			$(this).width($('.slider').width());
+	 			return commonWidth += $(this).width()
+	 		});
+	 		$('.slider-container').width(commonWidth);
+	 	}
+	 };
+	 /*create a slider with correct sizes end*/
 	 $(function(){ /*document.ready*/
 
 	 	$('a[href="#"]').click(function(e){
@@ -99,8 +111,52 @@
 	 		};
 	 	});
 	 	/*modify header end*/
+	 	/*carousel*/
+	 	$('.apartments__carousel').owlCarousel({
+	 		loop: true,
+	 		items: 3,
+	 		navigation: true,
+	 		navigationText: ['<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>','<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>']
+	 	});
+	 	/*carousel end*/
+	 	sliderSizes();
+	 	/*slider*/
+	 	window.moveFlag = true;
+	 	$('.slider__slide').mouseenter(function(){
+	 		if(!window.moveFlag){
+	 			return
+	 		}
+	 		window.moveFlag =false;
+	 		var slideLeft = $(this).offset().left;
+	 		var containerLeft = $(this).closest('.slider').offset().left;
+	 		var current = $(this);
+	 		var lastElement = $('.slider__slide').last();
+	 		var firstElement = $('.slider__slide').first();
+	 		if(current.index() === $('.slider__slide').first().index()){
+	 			$('.slider-container').prepend(lastElement);
+	 			$('.slider__slide:not(:first-of-type)').css('margin-left','px');
+			}
+	 		if(slideLeft<containerLeft){
+	 			var difference = containerLeft - slideLeft;
+	 			$('.slider__slide:first').animate({marginLeft: "+="+difference},1000,function(){
+	 				$('.slider__slide').removeClass('active');
+	 				current.addClass('active');
+	 				window.moveFlag = true;
+	 			});
+	 		}else{
+	 			var difference = slideLeft - containerLeft;
+	 				$(".slider__slide:first").animate({marginLeft: "-="+difference},1000,function(){
+	 				$('.slider__slide').removeClass('active');
+	 				current.addClass('active');
+	 				window.moveFlag = true;
+	 			});
+
+	 		}
+	 	});
+	 	/*slider end*/
 	});
 	 $(window).resize(function(){
 	 	videoPlayerHeight();
+	 	sliderSizes();
 	 })
 })(jQuery);
