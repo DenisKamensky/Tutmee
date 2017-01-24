@@ -121,38 +121,44 @@
 	 	/*carousel end*/
 	 	sliderSizes();
 	 	/*slider*/
-	 	window.moveFlag = true;
-	 	$('.slider__slide').mouseenter(function(){
-	 		if(!window.moveFlag){
-	 			return
-	 		}
-	 		window.moveFlag =false;
-	 		var slideLeft = $(this).offset().left;
-	 		var containerLeft = $(this).closest('.slider').offset().left;
-	 		var current = $(this);
-	 		var lastElement = $('.slider__slide').last();
-	 		var firstElement = $('.slider__slide').first();
-	 		if(current.index() === $('.slider__slide').first().index()){
-	 			$('.slider-container').prepend(lastElement);
-	 			$('.slider__slide:not(:first-of-type)').css('margin-left','px');
-			}
-	 		if(slideLeft<containerLeft){
-	 			var difference = containerLeft - slideLeft;
-	 			$('.slider__slide:first').animate({marginLeft: "+="+difference},1000,function(){
-	 				$('.slider__slide').removeClass('active');
-	 				current.addClass('active');
-	 				window.moveFlag = true;
-	 			});
-	 		}else{
-	 			var difference = slideLeft - containerLeft;
-	 				$(".slider__slide:first").animate({marginLeft: "-="+difference},1000,function(){
-	 				$('.slider__slide').removeClass('active');
-	 				current.addClass('active');
-	 				window.moveFlag = true;
-	 			});
-
-	 		}
-	 	});
+	 	if($('.slider').length){
+	 		window.condition = true;
+	 		var parent = $('.slider-container');
+	 		var lastElem = parent.find('.slider__slide:last');
+	 		lastElem.css('margin-left', '-'+lastElem.width()+'px');
+	 		parent.prepend(parent.find('.slider__slide:last'));
+	 		parent.find('.slider__slide:eq(1)').addClass('active');
+	 		$('.slider__slide').hover(function(){
+	 			var index = $(this).index();
+	 			if(!window.condition){
+	 				return;
+	 			}
+	 			window.condition = false;
+	 			if(index===0){
+	 				var lastAgain = parent.find('.slider__slide:last');
+	 				lastAgain.css('margin-left', '-'+lastElem.width()*2+'px');
+	 				parent.prepend(lastAgain);
+	 				var curSlide = $(this)
+	 				/*delete margin from second slide's attribute */
+	 					var style = curSlide.attr('style').split(';').splice(0,1);
+	 					curSlide.attr('style',style.join(';'));
+	 					/*delete margin from second slide's attribute end*/
+	 				var elemsToMove = [];
+	 				$('.slider__slide').each(function(){
+	 					if($(this).attr('style').indexOf('margin')!= -1){
+	 						elemsToMove.push($(this));
+	 					}
+	 				});
+	 				elemsToMove.forEach(function(el){
+	 					el.animate({marginLeft: '+='+lastAgain.width()},2000,function(){
+	 						window.condition = true;
+	 					});
+	 				});
+	 			}else{
+	 				window.condition = true;
+	 			}
+	 		});
+	 	}
 	 	/*slider end*/
 	});
 	 $(window).resize(function(){
