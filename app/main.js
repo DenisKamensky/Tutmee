@@ -75,9 +75,9 @@
 	 	$('.form-block form').submit(function(e){
 	 		var userName = $(this).find('.form-block__name input').val();
 	 		var tel = $(this).find('.form-block__tel input').val();
-	 		var name_pattern = /[a-яА-Я]\s*[a-яА-Я]/i;
+	 		var namePattern = /[a-яА-Я]\s*[a-яА-Я]/i;
 	 		var telPattern = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
-	 		var nameResult = name_pattern.test(userName);
+	 		var nameResult = namePattern.test(userName);
 	 		var telResult = telPattern.test(tel)
 	 		if(!nameResult){
 	 			e.preventDefault();
@@ -128,17 +128,18 @@
 	 		lastElem.css('margin-left', '-'+lastElem.width()+'px');
 	 		parent.prepend(parent.find('.slider__slide:last'));
 	 		parent.find('.slider__slide:eq(1)').addClass('active');
-	 		$('.slider__slide').hover(function(){
+	 		$('.guest-block__slider').on('mouseover','.slider__slide',function(){
 	 			var index = $(this).index();
-	 			if(!window.condition){
+	 			if(!window.condition||index===parent.find('.active').index()){ // exit from function if hover event not finished yet or hover element === active slide 
 	 				return;
 	 			}
 	 			window.condition = false;
-	 			if(index===0){
+	 			if(index===0){ //move forward if hover element first
+	 				var curSlide = $(this); 
+	 				parent.find('.active').removeClass('active');
 	 				var lastAgain = parent.find('.slider__slide:last');
 	 				lastAgain.css('margin-left', '-'+lastElem.width()*2+'px');
 	 				parent.prepend(lastAgain);
-	 				var curSlide = $(this)
 	 				/*delete margin from second slide's attribute */
 	 					var style = curSlide.attr('style').split(';').splice(0,1);
 	 					curSlide.attr('style',style.join(';'));
@@ -151,11 +152,45 @@
 	 				});
 	 				elemsToMove.forEach(function(el){
 	 					el.animate({marginLeft: '+='+lastAgain.width()},2000,function(){
+	 						curSlide.addClass('active');
 	 						window.condition = true;
+	 						return;
 	 					});
 	 				});
-	 			}else{
-	 				window.condition = true;
+	 			}else if(index!=($('.slider__slide:last').index())){
+	 				var active = parent.find('.active');
+	 				active.removeClass('active');
+	 				if(index>active.index()){ //move forward if hover element not first and not last
+	 					$('.slider__slide:first').animate({marginLeft: '-='+lastElem.width()},2000,function(){
+	 						active.next().addClass('active')
+	 						window.condition = true;
+	 						return;
+	 					});
+	 				}else{  //move back if hover element not first and not last
+	 					$('.slider__slide:first').animate({marginLeft: '+='+lastElem.width()},2000,function(){
+	 						active.prev().addClass('active')
+	 						window.condition = true;
+	 						return;
+	 					});
+	 				}
+	 			}else{ // if hover element last
+	 				var active = parent.find('.active');
+	 				active.removeClass('active');
+	 				var appendEl = $('.slider__slide:first').clone(); //let's clone first slide and take infinit quantity of slides
+	 				/*delete margin from clone slide's attribute */
+	 					var style = appendEl.attr('style').split(';').splice(0,1);
+	 					appendEl.attr('style',style.join(';'));
+	 				/*delete margin from clone slide's attribute end*/
+	 				$('.slider__slide:last').after(appendEl)
+	 				$('.slider__slide:first').animate({marginLeft: '-='+lastElem.width()},2000,function(){
+	 						var marginLeft = parseInt($('.slider__slide:first').css('margin-left'));
+	 						$('.slider__slide:eq(1)').css('margin-left',marginLeft+lastElem.width());
+	 						$('.slider__slide:eq(0)').remove();
+	 						active.next().addClass('active');
+	 						window.condition = true;
+	 						return;
+	 					});
+	 				
 	 			}
 	 		});
 	 	}
