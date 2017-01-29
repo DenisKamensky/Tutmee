@@ -573,7 +573,38 @@ body {
 
 .guest-block .slider {
   max-width: 87%;
-  margin: auto; }
+  margin: auto;
+  position: relative; }
+  .guest-block .slider__controls {
+    background-color: #6b5a8d;
+    color: #1d1513;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    line-height: 61px;
+    font-size: 34px;
+    position: absolute;
+    top: 45%;
+    z-index: 3;
+    display: none; }
+    .guest-block .slider__controls:hover {
+      color: #fff; }
+    .guest-block .slider__controls_next {
+      right: 0; }
+  .guest-block .slider__label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #33a296;
+    color: #FFF;
+    padding: 10px;
+    font-size: 21px;
+    font-family: 'Roboto';
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    display: none; }
   .guest-block .slider .slider-container {
     clear: both;
     position: relative; }
@@ -606,5 +637,59 @@ body {
     .guest-block .slider__slide.active a {
       visibility: visible;
       opacity: 1; }
+    .guest-block .slider__slide.active .slider__label {
+      visibility: visible;
+      opacity: 1; }
     .guest-block .slider__slide img {
       max-width: 100%; }
+
+.guest-block__slide-text {
+  text-align: justify;
+  font-size: 18px;
+  font-family: 'Helvetica';
+  position: absolute;
+  z-index: 0;
+  opacity: 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  visibility: hidden;
+  top: 0;
+  margin-bottom: 50px; }
+  .guest-block__slide-text.active {
+    position: static;
+    opacity: 1;
+    visibility: visible; }
+
+.slide-headings {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 65px; }
+  .slide-headings__heading {
+    display: inline-block;
+    font-size: 21px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    font-family: 'Helvetica';
+    letter-spacing: 0.1em;
+    margin-left: 50px; }
+    .slide-headings__heading:first-of-type {
+      margin-left: 0; }
+    .slide-headings__heading::after {
+      content: '';
+      border: 18px solid transparent;
+      border-top: 15px solid #33a296;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      margin: auto;
+      width: 15px;
+      pointer-events: none;
+      visibility: hidden; }
+    .slide-headings__heading.active {
+      background-color: #33a296;
+      color: #fff;
+      font-family: 'Roboto', sans-serif; }
+      .slide-headings__heading.active::after {
+        visibility: visible; }

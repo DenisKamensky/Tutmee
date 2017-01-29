@@ -258,3 +258,49 @@
 			max-width: initial
 		&__studio
 			margin-right: 0
+@media only screen and(max-width: 1030px)
+	.guest-block
+		&>.container:first-of-type
+			margin: 0
+			padding: 0
+			width: 100%
+			& .col-md-12:first-of-type
+				margin-left: 15px
+				margin-right: 15px	
+				width: calc(100% - 30px)
+				box-sizing: border-box
+		& .slider
+			max-width: 100%
+@media only screen and(max-width: 1030px)
+	.slide-headings
+		&__heading
+			&::after
+				top: 98%
+@media only screen and(max-width: 1030px)
+	.web-studio
+		&__img
+			position: relative
+@media only screen and(max-width: 992px)
+	.guest-block
+		&__slide-text
+			padding: 0 30px
+@media only screen and(max-width: 890px)
+	.slide-headings
+		&__heading
+			margin-left: 10px
+@media only screen and(max-width: 750px)
+	.slide-headings
+		&__heading
+			display: none
+	.guest-block
+		 .slider
+		 	&__label,&__controls
+		 		display: block
+ 			&__slide:not(:first-of-type)
+ 				margin-right: 0
+@media only screen and(max-width: 500px)
+	.guest-block 
+		.slider__slide 
+			img
+				max-width: initial
+				max-height: 80vh
