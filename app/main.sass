@@ -653,10 +653,19 @@ body
 	padding-top: 100px
 	padding-bottom: 80px
 	overflow: hidden
-	&__visual
-		background-image: url('../img/room-big.png')
-		background-repeat: no-repeat
-		
+	background-image: url('../img/room-big.png')
+	background-repeat: no-repeat	
+	background-size: 1320px
+	background-position: -405px 150px
+	&__apartment-img 
+		left: -71px
+		bottom: -147px
+	&__content-img
+		left: 255px
+		top: -40px
+	&__social-img
+		left: 115px
+		top: 225px
 .room-heading
 		width: 660px
 		margin-left: auto
@@ -682,3 +691,74 @@ body
 			font-size: 16px
 			line-height: 1.875em
 			letter-spacing: 0.1em
+.visual-text
+	position: relative
+	width: 475px
+	margin-left: auto
+	margin-right: 24vw
+	&__title
+		color: #fff
+		border-bottom: 1px dotted #fff
+		border-width: 2px
+		font-size: 40px
+		font-family: 'OpenGost Type A TT', serif 
+		line-height: 0.75em
+		padding-bottom: 0.375em
+		letter-spacing: 0.1em
+		display: block
+		margin-bottom: 0.625em
+	&__toggler
+		color: #fff
+		display: block
+		width: 35px
+		text-align: center
+		height: 48px
+		line-height: 48px
+		position: absolute
+		right: 0
+		top: 0
+		font-size: 25px
+		cursor: pointer
+	&__content
+		font-size: 16px
+		font-family: 'Helvetica'
+		letter-spacing: 0.1em
+		line-height: 1.875em
+		margin-bottom: 4.6875em
+	&:last-of-type
+		.visual-text__content
+			margin-bottom: 0
+.visual
+	position: relative
+	&__external-img
+		display: inline-block
+		position: absolute
+		z-index: 1
+	&__trigger
+		position: absolute
+		cursor: pointer
+		color: #fff
+		font-size: 50px
+		height: 50px
+		width: 50px
+		line-height: 50px
+		border-radius: 50%
+		box-sizing: border-box
+		text-align: center
+		color: #fff
+		background-color: #2d232c
+		z-index: 2
+		transition: background .3s
+		&_apartmens
+			top: 430px
+			left: 245px
+		&_content
+			top: 345px
+			left: 595px
+		&_social
+			top: 215px
+			left: 175px
+		&_enabled,&:hover
+			border: 1px solid #fff
+			background-color: #33a296
+			line-height: 48px

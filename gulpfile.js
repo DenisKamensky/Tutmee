@@ -26,7 +26,8 @@ gulp.task('sass', function () {
     	browsers: ['last 30 versions'],
     	cascade: false
     }))
-    .pipe(gulp.dest('./app/css'));
+    .pipe(gulp.dest('./app/css'))
+    .pipe(browserSync.stream());
 });
 gulp.task('server', function() {
     browserSync.init({
@@ -35,7 +36,8 @@ gulp.task('server', function() {
         }
     });
     gulp.watch("app/*.html").on('change', browserSync.reload);
-    gulp.watch("app/css/*.css").on('change', browserSync.reload);
+    // gulp.watch("app/css/*.css").on('change', browserSync.reload);
+    gulp.watch('./app/*.sass',['sass'])
     gulp.watch("app/**/*.js").on('change', browserSync.reload);
 });
 gulp.task('build', function () {
