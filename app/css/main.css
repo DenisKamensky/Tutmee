@@ -704,10 +704,11 @@ body {
   background-image: url("../img/room-big.png");
   background-repeat: no-repeat;
   background-size: 1320px;
-  background-position: -405px 150px; }
+  background-position: -405px 150px;
+  min-height: 1075px; }
   .room__apartment-img {
-    left: -71px;
-    bottom: -147px; }
+    left: -72px;
+    top: 31px; }
   .room__content-img {
     left: 255px;
     top: -40px; }
@@ -756,7 +757,8 @@ body {
     padding-bottom: 0.375em;
     letter-spacing: 0.1em;
     display: block;
-    margin-bottom: 0.625em; }
+    margin-bottom: 0.625em;
+    cursor: pointer; }
   .visual-text__toggler {
     color: #fff;
     display: block;
@@ -768,13 +770,20 @@ body {
     right: 0;
     top: 0;
     font-size: 25px;
-    cursor: pointer; }
+    cursor: pointer;
+    -webkit-transition: all .5s;
+    transition: all .5s; }
+    .visual-text__toggler_rotated {
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg); }
   .visual-text__content {
     font-size: 16px;
     font-family: 'Helvetica';
     letter-spacing: 0.1em;
     line-height: 1.875em;
-    margin-bottom: 4.6875em; }
+    margin-bottom: 4.6875em;
+    display: none; }
   .visual-text:last-of-type .visual-text__content {
     margin-bottom: 0; }
 
@@ -783,7 +792,12 @@ body {
   .visual__external-img {
     display: inline-block;
     position: absolute;
-    z-index: 1; }
+    z-index: 1;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    opacity: 0; }
+    .visual__external-img_visible {
+      opacity: 1; }
   .visual__trigger {
     position: absolute;
     cursor: pointer;

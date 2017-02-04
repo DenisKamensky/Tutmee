@@ -17,6 +17,7 @@
     "gulp-if": "^2.0.2",
     "gulp-jsmin": "^0.1.5",
     "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.0",
     "gulp-tinypng": "^1.0.2",
     "gulp-useref": "^3.1.2"
   }

@@ -99,7 +99,47 @@
 	 		}
 	 	});
 	 	/*submit footer form  end*/
+	 	/* click on + button*/
+	 	$('.visual__trigger').mouseup(function(){
+	 		var VISIBLEIMG = 'visual__external-img_visible';
+	 		$(this).toggleClass('visual__trigger_enabled');
+	 		var classList = $(this).attr('class');
+	 		function returnIndex(queryWord){
+	 			return classList.indexOf(queryWord)!=-1;
+	 		};
+	 		function showContent(){
+	 			this.find('.visual-text__content').slideToggle();
+	 			this.find('.visual-text__toggler').toggleClass('visual-text__toggler_rotated');
+	 		};
+	 		if(returnIndex('apartmens')){
+	 			$('.room__apartment-img').toggleClass(VISIBLEIMG);
+	 			showContent.call($('.visual__text[data-part="apartments"]'));
+	 		}else if(returnIndex('social')){
+	 			$('.room__social-img').toggleClass(VISIBLEIMG);
+	 			showContent.call($('.visual__text[data-part="social"]'));
+	 		}else{
+	 			$('.room__content-img').toggleClass(VISIBLEIMG);
+	 			showContent.call($('.visual__text[data-part="content"]'));
+	 			
+	 		}
+	 	});
+	 	/* click on + button end*/
+	 	/* toggle text on apertmens block end*/
+	 	$('.visual__text').on('mouseup','.visual-text__title, .visual-text__toggler',function(){
+	 		var parent = $(this).closest('.visual__text');
+	 		parent.find('.visual-text__content').slideToggle();
+	 		parent.find('.visual-text__toggler').toggleClass('visual-text__toggler_rotated');
+	 		// switch(parent.attr('data-part')){
+	 		// 	case 'apartments': $('.visual__trigger_apartmens').mouseup()
+	 		// 		break;
+	 		// 	case 'content': $('.visual__trigger_content').mouseup()
+	 		// 		break;
+	 		// 	case 'social': $('.visual__trigger_social').mouseup()
+	 		// 		break;
+	 		// }
 
+	 	});
+	 	/* toggle text on apertmens block end*/
 	 	/*modify header*/
 	 	$(window).scroll(function(){
 	 		var pagePosition = $('.header').next().offset().top;
@@ -107,7 +147,7 @@
 	 		if(headerPosition>pagePosition){
 	 			$('.header').addClass('header_scrolled');
 	 		}else{
-	 			$('.header').removeClass('header_scrolled');
+	 			$('.header').toggleClass('header_scrolled');
 	 		};
 	 	});
 	 	/*modify header end*/

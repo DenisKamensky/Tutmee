@@ -657,9 +657,10 @@ body
 	background-repeat: no-repeat	
 	background-size: 1320px
 	background-position: -405px 150px
+	min-height: 1075px
 	&__apartment-img 
-		left: -71px
-		bottom: -147px
+		left: -72px
+		top: 31px
 	&__content-img
 		left: 255px
 		top: -40px
@@ -707,6 +708,7 @@ body
 		letter-spacing: 0.1em
 		display: block
 		margin-bottom: 0.625em
+		cursor: pointer
 	&__toggler
 		color: #fff
 		display: block
@@ -719,12 +721,16 @@ body
 		top: 0
 		font-size: 25px
 		cursor: pointer
+		transition: all .5s
+		&_rotated
+			transform: rotate(180deg)
 	&__content
 		font-size: 16px
 		font-family: 'Helvetica'
 		letter-spacing: 0.1em
 		line-height: 1.875em
 		margin-bottom: 4.6875em
+		display: none
 	&:last-of-type
 		.visual-text__content
 			margin-bottom: 0
@@ -734,6 +740,10 @@ body
 		display: inline-block
 		position: absolute
 		z-index: 1
+		transition: all 0.5s
+		opacity: 0
+		&_visible
+			opacity: 1
 	&__trigger
 		position: absolute
 		cursor: pointer

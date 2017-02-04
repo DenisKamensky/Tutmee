@@ -7,7 +7,8 @@ var gulp = require('gulp'),
 	gulpif = require('gulp-if'),
 	tinypng = require('gulp-tinypng'),
 	clean = require('gulp-clean'),
-	autoprefixer = require('gulp-autoprefixer');
+	autoprefixer = require('gulp-autoprefixer'),
+    sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('tinypng', function () {
     gulp.src('no-comp/*.*')
