@@ -506,6 +506,7 @@ body {
 
 .apartments {
   background-color: #ed8d54;
+  display: none;
   background-image: -webkit-radial-gradient(ellipse farthest-corner at center top, #f3ac4a 0%, #ed8d54 100%);
   background-image: radial-gradient(ellipse farthest-corner at center top, #f3ac4a 0%, #ed8d54 100%); }
   .apartments__header {
@@ -706,7 +707,7 @@ body {
   background-size: 1320px;
   background-position: -405px 150px;
   min-height: 1075px; }
-  .room__apartment-img {
+  .room__apartments-img {
     left: -72px;
     top: 31px; }
   .room__content-img {
@@ -817,7 +818,7 @@ body {
     z-index: 2;
     -webkit-transition: background .3s;
     transition: background .3s; }
-    .visual__trigger_apartmens {
+    .visual__trigger_apartments {
       top: 430px;
       left: 245px; }
     .visual__trigger_content {

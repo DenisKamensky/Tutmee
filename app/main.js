@@ -100,45 +100,36 @@
 	 	});
 	 	/*submit footer form  end*/
 	 	/* click on + button*/
-	 	$('.visual__trigger').mouseup(function(){
-	 		var VISIBLEIMG = 'visual__external-img_visible';
-	 		$(this).toggleClass('visual__trigger_enabled');
-	 		var classList = $(this).attr('class');
-	 		function returnIndex(queryWord){
-	 			return classList.indexOf(queryWord)!=-1;
-	 		};
-	 		function showContent(){
-	 			this.find('.visual-text__content').slideToggle();
-	 			this.find('.visual-text__toggler').toggleClass('visual-text__toggler_rotated');
-	 		};
-	 		if(returnIndex('apartmens')){
-	 			$('.room__apartment-img').toggleClass(VISIBLEIMG);
-	 			showContent.call($('.visual__text[data-part="apartments"]'));
-	 		}else if(returnIndex('social')){
-	 			$('.room__social-img').toggleClass(VISIBLEIMG);
-	 			showContent.call($('.visual__text[data-part="social"]'));
+	 	function showContent(blockName, type){ 
+	 		/* this part of code will change the appearence of content an images in appartments block*/
+	 		if(type!=undefined){
+	 			var classAttr = blockName.attr('class').replace(/(visual__trigger|_|enabled)/g,'').trim();
+	 			console.log(classAttr)
+	 			blockName.toggleClass('visual__trigger_enabled');
+	 			$('.room__'+classAttr+'-img').toggleClass('visual__external-img_visible');
+	 			 var content =  $('.visual-text[data-part="'+classAttr+'"]');
+	 			 content.find('.visual-text__toggler').toggleClass('visual-text__toggler_rotated');
+	 			 content.find('.visual-text__content').slideToggle();
 	 		}else{
-	 			$('.room__content-img').toggleClass(VISIBLEIMG);
-	 			showContent.call($('.visual__text[data-part="content"]'));
-	 			
+	 			var parent = blockName.closest('.visual-text');
+	 			var type = parent.attr('data-part');
+	 			parent.find('.visual-text__content').slideToggle();
+	 			parent.find('.visual-text__toggler').toggleClass('visual-text__toggler_rotated');
+	 			$('.visual__trigger_'+type).toggleClass('visual__trigger_enabled');
+	 			$('.room__'+type+'-img').toggleClass('visual__external-img_visible')
 	 		}
+	 	}
+	 	$('.visual__trigger,.visual-text__title,.visual-text__toggler').mouseup(function(){
+	 		if($(this).attr('class').indexOf('trigger')!=-1){
+	 			showContent($(this),'button');
+	 		}else{
+	 			showContent($(this));
+	 		}
+	 		
 	 	});
 	 	/* click on + button end*/
 	 	/* toggle text on apertmens block end*/
-	 	$('.visual__text').on('mouseup','.visual-text__title, .visual-text__toggler',function(){
-	 		var parent = $(this).closest('.visual__text');
-	 		parent.find('.visual-text__content').slideToggle();
-	 		parent.find('.visual-text__toggler').toggleClass('visual-text__toggler_rotated');
-	 		// switch(parent.attr('data-part')){
-	 		// 	case 'apartments': $('.visual__trigger_apartmens').mouseup()
-	 		// 		break;
-	 		// 	case 'content': $('.visual__trigger_content').mouseup()
-	 		// 		break;
-	 		// 	case 'social': $('.visual__trigger_social').mouseup()
-	 		// 		break;
-	 		// }
-
-	 	});
+	 	
 	 	/* toggle text on apertmens block end*/
 	 	/*modify header*/
 	 	$(window).scroll(function(){
