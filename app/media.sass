@@ -304,3 +304,97 @@
 			img
 				max-width: initial
 				max-height: 80vh
+@media only screen and(max-width: 1865px)
+	.room-heading,.visual-text
+		margin-right: 18vw
+@media only screen and(max-width: 1655px)
+	.room-heading,.visual-text
+		margin-right: 12vw
+@media only screen and(max-width: 1550px)
+	.room-heading,.visual-text
+		margin-right: 6vw
+@media only screen and(max-width: 1550px)
+	.room-heading,.visual-text
+		margin-right: 30px
+@media only screen and(max-width: 1350px)
+	.room
+		padding-top: 50px
+		position: relative
+		background-image: none
+		min-height: 940px
+		&__content-img
+			top: 155px
+			left: 690px
+		&__apartments-img
+			left: 370px
+			top: 235px
+		&__social-img
+			left: 535px
+			top: 425px
+@media only screen and(max-width: 1350px)
+	.room-heading
+		margin-left: 0px
+		width: auto
+		&__text
+			max-width: 100%
+			width: 400px
+@media only screen and(max-width: 1350px)
+	.visual-text
+		width: 350px
+		&__title
+			margin: 0
+			padding: 0
+			border: none
+		&_visible
+			background-image: url(../img/dialog-bg.png)
+			-webkit-background-size: contain
+			-moz-background-size: contain
+			-o-background-size: contain
+			-ms--webkit-background-size: contain
+			padding: 20px
+			background-size: contain
+			overflow: visible
+			background-repeat: no-repeat
+		&__content
+			margin-bottom: 30px
+			width: 270px
+	.visual
+		width: 1350px
+		height: 700px
+		overflow: hidden
+		position: absolute
+		background-image: url(../img/room-big.png)
+		background-position: center top
+		margin: auto
+		right: 0
+		top: 240px
+		&__text
+			position: absolute
+			margin: 0
+			z-index: 2
+			
+			&[data-part='apartments']
+				bottom: 355px
+				left: 400px
+			&[data-part='content']
+				bottom: 100px
+				left: 215px
+			&[data-part='social']
+				left: initial
+				right: 240px
+				bottom: 40px
+		&__trigger
+			&_apartments
+				top: 350px
+				left: 620px
+			&_social
+				left: initial
+				right: 360px
+				top: 520px
+			&_content
+				top: 610px
+				left: 425px
+		&__external-img
+			opacity: 1
+
+	
