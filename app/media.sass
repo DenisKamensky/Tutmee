@@ -341,23 +341,57 @@
 @media only screen and(max-width: 1350px)
 	.visual-text
 		width: 350px
+		&:last-of-type 
+			.visual-text__content
+				margin-bottom: 60px
 		&__title
 			margin: 0
+			margin-bottom: 20px
 			padding: 0
 			border: none
+			text-shadow: 0 0 10px rgba(0,0,0,.9)
+			&_visible
+				text-shadow: none
+				color: #30232a
+		&__toggler
+			display: none
+			background-color: #30232a
+			width: 35px
+			height: 35px
+			line-height: 27px
+			border-radius: 50%
+			font-size: 30px
+			top: 20px
+			right: 40px
+			&::before
+				font-family: 'Helvetica'
+				content: '×'
+			&_rotated
+				display: block
 		&_visible
 			background-image: url(../img/dialog-bg.png)
 			-webkit-background-size: contain
 			-moz-background-size: contain
 			-o-background-size: contain
 			-ms--webkit-background-size: contain
-			padding: 20px
+			padding: 30px
 			background-size: contain
 			overflow: visible
 			background-repeat: no-repeat
 		&__content
-			margin-bottom: 30px
+			margin-bottom: 60px
 			width: 270px
+			line-height: 1.44
+			opacity: 0
+			visibility: hidden
+			display: none
+			&_visible
+				visibility: visible
+				display: block
+				transition: opacity .3s
+				transition-delay: .4s
+				opacity: 1
+
 	.visual
 		width: 1350px
 		height: 700px
@@ -396,5 +430,77 @@
 				left: 425px
 		&__external-img
 			opacity: 1
-
-	
+@media only screen and(max-width: 1000px)
+	.room
+		min-height: 0
+		padding-bottom: 0
+@media only screen and(max-width: 1000px)
+	.room-heading
+		text-align: center
+		margin-right: 0
+		&__header
+			font-size: 50px
+			color: #2c1e1d
+		&__text
+			width: 70%
+			margin-right: auto
+			margin-left: auto
+			margin-bottom: 60px
+@media only screen and(max-width: 1000px)
+	.visual
+		background-image: none
+		position: static
+		width: 100%
+		height: auto
+		&__trigger
+			display: none
+		&__external-img
+			display: none
+		&__text
+			position: static
+			margin-right: auto
+			margin-left: auto
+			width: 100%
+			background-image: none
+			text-align: center
+@media only screen and(max-width: 1000px)
+	.visual-text
+		&__img
+			max-width: 100%
+		&__title
+			width: 72%
+			text-align: left
+			display: block
+			margin-right: auto
+			margin-left: auto
+			margin-top: 25px
+			padding-bottom: 10px
+			margin-bottom: 10px
+			border-bottom: 1px dashed #fff
+			color: #2c1e1d
+			text-shadow: none
+		&__content
+			width: 72%
+			text-align: left
+			margin-right: auto
+			margin-left: auto
+			outline: 1px
+			display: block !important
+			visibility: visible
+			opacity: 1
+@media only screen and(max-width: 500px)
+	.visual-text
+		&__title
+			width: 100%
+		&__content
+			width: 100%
+@media only screen and(max-width: 600px)
+	.room-heading
+		&__text
+			width: 100%
+@media only screen and(max-width: 500px)
+	.room-heading
+		&__sub-header
+			font-size: 17px
+		&__header
+			font-size: 42px

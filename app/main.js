@@ -112,21 +112,27 @@
 	 	/* click on + button*/
 	 	function showContent(blockName, type){ 
 	 		/* this part of code will change the appearence of content an images in appartments block*/
+	 		if($(window).width()<1001){
+	 			return
+	 		}
 	 		if(type!=undefined){
 	 			var classAttr = blockName.attr('class').replace(/(visual__trigger|_|enabled)/g,'').trim();
-	 			console.log(classAttr)
 	 			blockName.toggleClass('visual__trigger_enabled');
 	 			$('.room__'+classAttr+'-img').toggleClass('visual__external-img_visible');
 	 			 var content =  $('.visual-text[data-part="'+classAttr+'"]');
 	 			 content.toggleClass('visual-text_visible');
+	 			 content.find('.visual-text__title').toggleClass('visual-text__title_visible');
 	 			 content.find('.visual-text__toggler').toggleClass('visual-text__toggler_rotated');
 	 			 content.find('.visual-text__content').slideToggle();
+	 			 content.find('.visual-text__content').toggleClass('visual-text__content_visible');
 	 		}else{
 	 			var parent = blockName.closest('.visual-text');
 	 			var type = parent.attr('data-part');
 	 			parent.find('.visual-text__content').slideToggle();
 	 			parent.toggleClass('visual-text_visible');
 	 			parent.find('.visual-text__toggler').toggleClass('visual-text__toggler_rotated');
+	 			parent.find('.visual-text__title').toggleClass('visual-text__title_visible');
+	 			parent.find('.visual-text__content').toggleClass('visual-text__content_visible');
 	 			$('.visual__trigger_'+type).toggleClass('visual__trigger_enabled');
 	 			$('.room__'+type+'-img').toggleClass('visual__external-img_visible')
 	 		}
