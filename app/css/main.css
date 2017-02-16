@@ -749,6 +749,8 @@ body {
   width: 475px;
   margin-left: auto;
   margin-right: 24vw; }
+  .visual-text__img {
+    display: none; }
   .visual-text__title {
     color: #fff;
     border-bottom: 1px dotted #fff;

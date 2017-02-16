@@ -488,7 +488,8 @@
 
 @media only screen and (max-width: 1000px) {
   .visual-text__img {
-    max-width: 100%; }
+    max-width: 100%;
+    display: inline-block; }
   .visual-text__title {
     width: 72%;
     text-align: left;
